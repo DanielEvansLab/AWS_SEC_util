@@ -7,5 +7,5 @@ mkdir $HOME/bin
 mv ../.bash_profile ../.bash_profile_bak
 cp .bash_profile ../
 
-SOURCE $HOME/.bash_profile
+source $HOME/.bash_profile
 

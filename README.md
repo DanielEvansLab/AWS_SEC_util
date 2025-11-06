@@ -17,8 +17,9 @@ List active tmux sessions with `tmux ls`
 Reattach to session 0 like this `tmux attach -t 0`
 
 Test tmux with a long-running process like this.
-c=1
-while true; do echo "Hello $c"; let c=c+1; sleep 1; done
+`c=1`
+
+`while true; do echo "Hello $c"; let c=c+1; sleep 1; done`
 
 You can end it with `Ctrl+c`
 

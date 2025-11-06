@@ -6,7 +6,9 @@ date
 chrs=({1..22})
 
 for chr in "${chrs[@]}"; do
-  echo "Analyzing chromosome ${chr}"
+  echo "********************************************"
+  echo "******Analyzing chromosome ${chr}***********"
+  echo "********************************************"
   plink2 --pfile $HOME/gwas_data/chr${chr} \
   --pheno iid-only $HOME/data/pheno.txt \
   --no-psam-pheno \

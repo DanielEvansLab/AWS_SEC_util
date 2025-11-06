@@ -9,3 +9,5 @@ cp .bash_profile ../
 
 source $HOME/.bash_profile
 
+sudo yum install tmux
+

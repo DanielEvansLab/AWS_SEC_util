@@ -8,6 +8,5 @@ fi
 # User specific environment and startup programs
 
 alias ll='ls -la'
-mkdir $HOME/bin
 export PATH="$HOME/bin:$PATH"
 

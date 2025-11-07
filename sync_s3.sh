@@ -16,4 +16,6 @@ fi
 
 aws s3 sync s3://alliston-evans-181-4-c-us-west-2.sec.ucsf.edu/OAI_topmed_data/ $HOME/gwas_data
 
+#copy notebook data to S3 bucket. Need to specify key
+aws s3 cp --sse aws:kms --sse-kms-key-id de3a4459-602b-4989-ac6b-ef7d950f8651 README.md s3://managed-sagemaker-canvas-300741468439
 

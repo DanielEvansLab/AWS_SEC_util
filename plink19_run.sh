@@ -9,14 +9,14 @@ for chr in "${chrs[@]}"; do
   echo "****************************************"
   echo "*****Analyzing chromosome ${chr}********"
   echo "****************************************"
-  plink --pheno ../data/mrospheno.txt \
-        --all-pheno \
-        --covar ../data/mroscov.txt \
-        --allow-no-sex \
-        --fam ~/gwas_data/MrOS/chr${chr}.plink.fam \
-        --map ~/gwas_data/MrOS/chr${chr}.plink.map \
-        --dosage ~/gwas_data/MrOS/chr${chr}.plink.dose.gz noheader format=1 \
-	--out ~/results/chr${chr}
+  plink --pheno $HOME/data/mrospheno.txt \
+  --all-pheno \
+  --covar $HOME/data/mroscov.txt \
+  --allow-no-sex \
+  --fam $HOME/gwas_data/MrOS/chr${chr}.plink.fam \
+  --map $HOME/gwas_data/MrOS/chr${chr}.plink.map \
+  --dosage $HOME/gwas_data/MrOS/chr${chr}.plink.dose.gz noheader format=1 \
+  --out $HOME/results/chr${chr}
 
 done
 

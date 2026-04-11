@@ -16,6 +16,9 @@ fi
 
 aws s3 sync s3://alliston-evans-181-4-c-us-west-2.sec.ucsf.edu/OAI_topmed_data/ $HOME/gwas_data
 
+#copy files within a dir
+aws s3 cp s3://alliston-evans-181-4-c-us-west-2.sec.ucsf.edu/OAI_GWAS_results/results_aws/ $HOME/data --recursive --exclude "*" --include "bs_fem*"
+
 #copy notebook data to S3 bucket. Need to specify key
 # key is the managed-s3-key that you select when creating a folder in S3
 aws s3 cp --sse aws:kms --sse-kms-key-id de3a4459-602b-4989-ac6b-ef7d950f8651 README.md s3://managed-sagemaker-canvas-300741468439

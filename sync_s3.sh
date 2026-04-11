@@ -23,7 +23,6 @@ aws s3 cp --sse aws:kms --sse-kms-key-id de3a4459-602b-4989-ac6b-ef7d950f8651 RE
 #copy directory, use recursive flag
 aws s3 cp --sse aws:kms --sse-kms-key-id de3a4459-602b-4989-ac6b-ef7d950f8651 ~/results/ s3://managed-sagemaker-canvas-300741468439 --recursive
 
-#delete files from S3
-aws s3 rm --sse aws:kms --sse-kms-key-id de3a4459-602b-4989-ac6b-ef7d950f8651 s3://managed-sagemaker-canvas-300741468439 --recursive --exclude "*" --include "*.gz" --dryrun
-
-aws s3 rm --sse aws:kms --sse-kms-key-id de3a4459-602b-4989-ac6b-ef7d950f8651 s3://managed-sagemaker-canvas-300741468439 --recursive --exclude "*" --include "*.gz" --dryrun
+#delete files from S3. Loginto EC2, run this to remove all gz files. Try dryrun first.
+aws s3 rm s3://managed-sagemaker-canvas-300741468439/gwas_results --recursive --exclude "*" --include "*.gz" --dryrun
+#this command will also delete the gwas_results folder itself, not just the files under it.

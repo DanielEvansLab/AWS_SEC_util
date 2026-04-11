@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#create bin and results dirs in home
+#create dirs in home
 if [ -d "$HOME/bin" ]; then
   echo "$HOME/bin exists"
 else
@@ -11,6 +11,12 @@ if [ -d "$HOME/results" ]; then
   echo "$HOME/results exists"
 else
   mkdir $HOME/results
+fi
+
+if [ -d "$HOME/data" ]; then
+  echo "$HOME/data exists"
+else
+  mkdir $HOME/data
 fi
 
 # move existing bash profile to backup, copy new profile to home

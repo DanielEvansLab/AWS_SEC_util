@@ -18,7 +18,7 @@ for file_name in "${file_names[@]}"; do
 	$HOME/bin/magma --bfile $HOME/bin/g1000_eur \
 		--pval $HOME/data/${file_name} ncol=OBS_CT \
 		--gene-annot $HOME/results/OAI.genes.annot \
-		--snp-wise=top \
+		--gene-model snp-wise=top \
 		--out $HOME/results/${trait}
 
 	$HOME/bin/magma --gene-results $HOME/results/${file_name2} \

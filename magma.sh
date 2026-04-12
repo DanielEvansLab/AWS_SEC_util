@@ -1,12 +1,12 @@
 #!/bin/bash
 
-~/bin/magma --annotate window=50 --snp-loc ../data/snp_loc.txt \
-	--gene-loc ~/bin/magma_aux/NCBI38/NCBI38.gene.loc \
-	--out ../results/OAI
+$HOME/bin/magma --annotate window=50 --snp-loc $HOME/bin/snp_loc.txt \
+	--gene-loc $HOME/bin/NCBI38.gene.loc \
+	--out $HOME/results/OAI
 
-cd ~/work/OAI/gwas_results_formatted/
+cd $HOME/data/
 file_names=($(ls *.txt))
-cd ~/work/OAI/magma/scripts/
+cd $HOME/AWS_SEC_util/
 
 for file_name in "${file_names[@]}"; do
 	echo $file_name
@@ -15,14 +15,15 @@ for file_name in "${file_names[@]}"; do
 	file_name2=${trait}.genes.raw
 	echo ${file_name2}
 
-	~/bin/magma --bfile ~/bin/magma_aux/g1000_eur/g1000_eur \
-		--pval ~/work/OAI/gwas_results_formatted/${file_name} ncol=OBS_CT \
-		--gene-annot ../results/OAI.genes.annot \
-		--out ../results/${trait}
+	$HOME/bin/magma --bfile $HOME/bin/g1000_eur \
+		--pval $HOME/data/${file_name} ncol=OBS_CT \
+		--gene-annot $HOME/results/OAI.genes.annot \
+		--snp-wise=top \
+		--out $HOME/results/${trait}
 
-	~/bin/magma --gene-results ../results/${file_name2} \
-		--set-annot ../data/genesets.txt gene-col=3 set-col=1 \
-		--out ../results/${trait}
+	$HOME/bin/magma --gene-results $HOME/results/${file_name2} \
+		--set-annot $HOME/bin/genesets.txt gene-col=3 set-col=1 \
+		--out $HOME/results/${trait}
 
 done
 

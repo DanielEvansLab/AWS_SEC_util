@@ -21,6 +21,10 @@ aws s3 cp s3://alliston-evans-181-4-c-us-west-2.sec.ucsf.edu/OAI_GWAS_results/re
 
 aws s3 cp s3://alliston-evans-181-4-c-us-west-2.sec.ucsf.edu/OAI_GWAS_results/ $HOME/bin --recursive --exclude "results_aws/*"
 
+#copy EC2 dir contents to S3
+#this command will copy the contents of results/ to S3. It does NOT create a results subfolder in S3 - only the files are copied. 
+aws s3 cp results/ s3://alliston-evans-181-4-c-us-west-2.sec.ucsf.edu/OAI_GWAS_results/results_magma/ --recursive
+
 #copy notebook data to S3 bucket. Need to specify key
 # key is the managed-s3-key that you select when creating a folder in S3
 aws s3 cp --sse aws:kms --sse-kms-key-id de3a4459-602b-4989-ac6b-ef7d950f8651 README.md s3://managed-sagemaker-canvas-300741468439

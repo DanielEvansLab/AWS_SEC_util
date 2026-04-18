@@ -27,6 +27,7 @@ aws s3 cp results/ s3://alliston-evans-181-4-c-us-west-2.sec.ucsf.edu/OAI_GWAS_r
 
 #copy S3 to local using aws cli
 #first need to authenticate on local. From login page, click "access keys." This opens a pop-up window. Choose option 1, which sets 3 environment variables that gives temporary access. This works great in most cases. Then, I already have aws cli installed on local. So, I can run aws s3 commands that interact with S3.
+#can be useful to use aws s3 sync if some results were previously copied. sync from to. aws s3 sync s3URI local
 
 #copy notebook data to S3 bucket. Need to specify key
 # key is the managed-s3-key that you select when creating a folder in S3
